@@ -29,6 +29,7 @@ class Main extends Component {
 
 		return (
 			<main className="main">
+				<div className="container" id="quote-box"></div>
 			</main>
 		)
 	}
