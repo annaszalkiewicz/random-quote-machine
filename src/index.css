@@ -15,7 +15,7 @@ html, body, #root, .App {
   width: 100%;
   font-family: 'Tangerine', cursive;
   font-weight: 700;
-  font-size: 2em;
+  font-size: 1em;
   text-align: center;
   border-bottom: solid 1px #000;
 }
