@@ -18,3 +18,13 @@ html, body, #root {
   text-align: center;
   border-bottom: solid 1px #000;
 }
+
+/* FOOTER */
+
+.footer {
+  padding: 1em;
+  border-top: solid 1px #000;
+}
+.footer a {
+  color: #000;
+}
