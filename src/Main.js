@@ -27,12 +27,13 @@ class Main extends Component {
 
 	render() {
 
-		const {quote } = this.state;
+		const {quote, author} = this.state;
 
 		return (
 			<main className="main">
 				<div className="container" id="quote-box">
 					<p className="quote" id="text">{quote}</p>
+					<p className="author" id="author">{author}</p>
 				</div>
 			</main>
 		)
