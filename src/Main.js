@@ -5,28 +5,28 @@ class Main extends Component {
 	constructor(props) {
 		super(props);
 
-		this.showRandom = this.showRandom.bind(this);
-		this.showError = this.showError.bind(this);
+		this.state = {
+			quote: "",
+			author: ""
+		}
 	}
 
 	componentDidMount = () => {
 
+		// Fetch random quote from API. If response is successful run showRandom() function, if not - showError()
+
 		fetch('https://talaikis.com/api/quotes/random/')
 		.then(response => response.json())
-		.then(this.showRandom())
-		.catch(e => this.showError());
+		.then((data) => {
+			this.setState({ quote: data.quote, author: data.author });
+		})
+		.catch(e => console.log('Error')
+		);
 
-	}
-
-	showRandom = () => {
-		console.log('Success!');
-	}
-
-	showError = () => {
-		console.log('Error');
 	}
 
 	render() {
+
 		return (
 			<main className="main">
 			</main>

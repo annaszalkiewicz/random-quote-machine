@@ -4,7 +4,7 @@ import Main from './Main';
 class App extends Component {
 	render() {
 		return (
-			<div className="App" id="quote-box">
+			<div className="App">
 				<header className="header">
 					<h1 className="heading-one">Your quote for today</h1>
 				</header>
