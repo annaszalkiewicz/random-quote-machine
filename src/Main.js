@@ -41,7 +41,9 @@ class Main extends Component {
 					<p className="quote" id="text">{quote}</p>
 					<p className="author" id="author">{author}</p>
 					<div className="bottom">
-						<Reload />
+						<Reload
+							fetchQuote = {this.fetchQuote}
+						/>
 					</div>
 				</div>
 			</main>
