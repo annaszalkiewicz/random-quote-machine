@@ -9,11 +9,16 @@ class Main extends Component {
 			quote: "",
 			author: ""
 		}
+		this.fetchQuote = this.fetchQuote.bind(this);
 	}
 
 	componentDidMount = () => {
 
-		// Fetch random quote from API. If response is successful run showRandom() function, if not - showError()
+		this.fetchQuote();
+
+	}
+
+	fetchQuote = () => {
 
 		fetch('https://talaikis.com/api/quotes/random/')
 		.then(response => response.json())
