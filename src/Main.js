@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Reload from './Reload';
 
 class Main extends Component {
 
@@ -39,6 +40,9 @@ class Main extends Component {
 				<div className="container" id="quote-box">
 					<p className="quote" id="text">{quote}</p>
 					<p className="author" id="author">{author}</p>
+					<div className="bottom">
+						<Reload />
+					</div>
 				</div>
 			</main>
 		)
