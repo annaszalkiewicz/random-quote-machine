@@ -10,13 +10,15 @@ class Share extends Component {
 		const { quote, author } = this.props;
 
 		return(
+
 			<div className="tweet">
 				
-					<a href={`https://twitter.com/intent/tweet?text=${quote}%20by%20${author}`} target="_blank" rel="noopener noreferrer">
+					<a href={`https://twitter.com/intent/tweet?text=${quote}%20by%20${author}&hashtags=quote`}>
 					<FontAwesomeIcon icon={faTwitterSquare} className="twitter" onClick={this.tweet} />
 					</a>
 
 			</div>
+
 		)
 	}
 
