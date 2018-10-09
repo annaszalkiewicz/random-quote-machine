@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Reload from './Reload';
+import Share from './Share';
 
 class Main extends Component {
 
@@ -41,6 +42,7 @@ class Main extends Component {
 					<p className="quote" id="text">{quote}</p>
 					<p className="author" id="author">{author}</p>
 					<div className="bottom">
+						<Share quote={quote} author={author} />
 						<Reload
 							fetchQuote = {this.fetchQuote}
 						/>
