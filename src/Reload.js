@@ -11,7 +11,7 @@ render() {
   const { fetchQuote } = this.props;
   
   return(
-    <div className="reload">
+    <div className="reload" id="new-quote">
       <FontAwesomeIcon icon={faRedoAlt} onClick={fetchQuote} />
     </div>
   )
