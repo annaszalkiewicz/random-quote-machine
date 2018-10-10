@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitterSquare, faTumblrSquare } from '@fortawesome/free-brands-svg-icons'
 
@@ -16,7 +17,7 @@ class Share extends Component {
 
 		return (
 
-			<div className="share"> a
+			<div className="share">
 
 				<button className="tumblr">
 					<a href="https://www.tumblr.com/share"  data-posttype="quote" data-content={quote} data-caption={author} target="_blank" rel="noopener noreferrer">
@@ -34,6 +35,11 @@ class Share extends Component {
 		)
 	}
 
+}
+
+Share.propTypes = {
+	quote: PropTypes.string.isRequired,
+	author: PropTypes.string.isRequired
 }
 
 export default Share;
