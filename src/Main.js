@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Reload from './Reload';
 import Share from './Share';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 
 class Main extends Component {
 
@@ -39,6 +41,7 @@ class Main extends Component {
 		return (
 			<main className="main">
 				<div className="container" id="quote-box">
+					<FontAwesomeIcon icon={faQuoteLeft} />
 					<p className="quote" id="text">{quote}</p>
 					<p className="author" id="author">{author}</p>
 					<div className="bottom">
