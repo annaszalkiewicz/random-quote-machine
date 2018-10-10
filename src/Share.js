@@ -24,7 +24,7 @@ class Share extends Component {
 						<FontAwesomeIcon icon={faTumblrSquare} />
 					</a>
 				</button>
-				<button className="tweet">
+				<button className="tweet" id="tweet-quote">
 					<a href={`https://twitter.com/intent/tweet?text=${quote}%20by%20${author}&hashtags=quote`}>
 						<FontAwesomeIcon icon={faTwitterSquare} className="twitter" onClick={this.tweet} />
 					</a>
