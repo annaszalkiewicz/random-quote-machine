@@ -40,6 +40,10 @@ html, body, #root, .App {
 .quote-right {
 	margin-left: 1em;
 }
+.author {
+	text-align: right;
+	margin-right: 1em;
+}
 
 /* FOOTER */
 
