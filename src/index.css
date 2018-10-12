@@ -30,6 +30,11 @@ html, body, #root, .App {
 	transform: translate(-50%, -50%);
 }
 
+.container {
+	box-shadow: 0 0 10px #a1a1a1;
+	padding: 1em;
+}
+
 /* FOOTER */
 
 .footer {
