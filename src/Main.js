@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Reload from './Reload';
 import Share from './Share';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
+import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 
 class Main extends Component {
 
@@ -41,8 +41,12 @@ class Main extends Component {
 		return (
 			<main className="main">
 				<div className="container" id="quote-box">
-					<FontAwesomeIcon icon={faQuoteLeft} />
-					<p className="quote" id="text">{quote}</p>
+					<div className="quote-container">
+						<FontAwesomeIcon icon={faQuoteLeft} className="quote-left" />
+						<span className="quote" id="text">{quote}</span>
+						<FontAwesomeIcon icon={faQuoteRight} className="quote-right" />
+					</div>
+					
 					<p className="author" id="author">{author}</p>
 					<div className="bottom">
 						<Share quote={quote} author={author} />
