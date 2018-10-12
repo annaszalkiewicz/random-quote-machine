@@ -44,6 +44,13 @@ html, body, #root, .App {
 	text-align: right;
 	margin-right: 1em;
 }
+.bottom {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	margin: 0 1em;
+}
 
 /* FOOTER */
 
