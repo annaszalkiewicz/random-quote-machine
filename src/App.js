@@ -34,7 +34,7 @@ class App extends Component {
 		const { randomColor } = this.state;
 
 		return (
-			<div className="App" style={{background: randomColor}}>
+			<div className="App" style={{background: randomColor, transition: "all 2s ease"}}>
 				<header className="header">
 					<h1 className="heading-one">Your quote for today</h1>
 				</header>
