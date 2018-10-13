@@ -49,7 +49,7 @@ class Main extends Component {
 	render() {
 
 		const {quote, author} = this.state;
-		const { updateColor } = this.props;
+		const { updateColor, randomColor } = this.props;
 		
 
 		return (
@@ -63,10 +63,15 @@ class Main extends Component {
 					
 					<p className="author" id="author">{author}</p>
 					<div className="bottom">
-						<Share quote={quote} author={author} />
+						<Share 
+							quote={quote} 
+							author={author} 
+							randomColor={randomColor}
+						/>
 						<Reload
 							fetchQuote = {this.fetchQuote}
 							updateColor = {updateColor}
+							randomColor = {randomColor}
 						/>
 					</div>
 				</div>

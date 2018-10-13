@@ -7,7 +7,7 @@ class Share extends Component {
 
 	render() {
 
-		const { quote, author } = this.props;
+		const { quote, author, randomColor } = this.props;
 
 		return (
 
@@ -15,12 +15,12 @@ class Share extends Component {
 
 				<button className="tumblr">
 					<a href="https://www.tumblr.com/share"  data-posttype="quote" data-content={quote} data-caption={author} target="_blank" rel="noopener noreferrer">
-						<FontAwesomeIcon icon={faTumblrSquare} size="3x" />
+						<FontAwesomeIcon icon={faTumblrSquare} size="3x" style={{color: randomColor}} />
 					</a>
 				</button>
 				<button className="tweet" id="tweet-quote">
 					<a href={`https://twitter.com/intent/tweet?text=${quote}%20by%20${author}&hashtags=quote`}>
-						<FontAwesomeIcon icon={faTwitterSquare} className="twitter" onClick={this.tweet} size="3x" />
+						<FontAwesomeIcon icon={faTwitterSquare} className="twitter" onClick={this.tweet} size="3x" style={{color: randomColor}} />
 					</a>
 				</button>
 
