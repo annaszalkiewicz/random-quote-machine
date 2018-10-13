@@ -11,9 +11,9 @@ render() {
   const { fetchQuote } = this.props;
   
   return(
-    <div className="reload" id="new-quote">
-      <FontAwesomeIcon icon={faRedoAlt} onClick={fetchQuote} />
-    </div>
+    <button className="reload" id="new-quote">
+      <FontAwesomeIcon icon={faRedoAlt} onClick={fetchQuote} size="2x" className="reload-icon" />
+    </button>
   )
 
 }
