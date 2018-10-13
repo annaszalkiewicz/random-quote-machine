@@ -15,7 +15,7 @@ class Share extends Component {
 
 				<button className="tumblr">
 					<a href="https://www.tumblr.com/share"  data-posttype="quote" data-content={quote} data-caption={author} target="_blank" rel="noopener noreferrer">
-						<FontAwesomeIcon icon={faTumblrSquare} />
+						<FontAwesomeIcon icon={faTumblrSquare} size="3x" />
 					</a>
 				</button>
 				<button className="tweet" id="tweet-quote">

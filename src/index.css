@@ -51,6 +51,13 @@ html, body, #root, .App {
 	justify-content: space-between;
 	margin: 0 1em;
 }
+.tumblr {
+	background: none;
+	border: none
+}
+.tumblr a {
+	color: #000;
+}
 
 /* FOOTER */
 
