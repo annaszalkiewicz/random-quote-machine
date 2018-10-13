@@ -8,10 +8,10 @@ class Reload extends Component {
 
 render() {
 
-  const { fetchQuote } = this.props;
+  const { fetchQuote, updateColor } = this.props;
   
   return(
-    <button className="reload" id="new-quote">
+    <button className="reload" id="new-quote" onClick={updateColor}>
       <FontAwesomeIcon icon={faRedoAlt} onClick={fetchQuote} size="2x" className="reload-icon" />
     </button>
   )
