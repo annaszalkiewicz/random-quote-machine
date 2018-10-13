@@ -11,7 +11,7 @@ render() {
   const { fetchQuote, updateColor, randomColor } = this.props;
   
   return(
-    <button className="reload" id="new-quote" onClick={updateColor}>
+    <button className="reload" id="new-quote" onClick={updateColor} aria-label="Click to get new quote">
       <FontAwesomeIcon icon={faRedoAlt} onClick={fetchQuote} size="2x" className="reload-icon" style={{background: randomColor}}/>
     </button>
   )

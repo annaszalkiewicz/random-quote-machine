@@ -13,12 +13,12 @@ class Share extends Component {
 
 			<div className="share">
 
-				<button className="tumblr">
+				<button className="tumblr" aria-label="Share quote on Tumblr">
 					<a href="https://www.tumblr.com/share"  data-posttype="quote" data-content={quote} data-caption={author} target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faTumblrSquare} size="3x" style={{color: randomColor}} />
 					</a>
 				</button>
-				<button className="tweet" id="tweet-quote">
+				<button className="tweet" id="tweet-quote" aria-label="Share quote on Tweeter">
 					<a href={`https://twitter.com/intent/tweet?text=${quote}%20by%20${author}&hashtags=quote`}>
 						<FontAwesomeIcon icon={faTwitterSquare} className="twitter" onClick={this.tweet} size="3x" style={{color: randomColor}} />
 					</a>
