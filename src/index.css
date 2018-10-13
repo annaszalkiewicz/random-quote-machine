@@ -51,11 +51,11 @@ html, body, #root, .App {
 	justify-content: space-between;
 	margin: 0 1em;
 }
-.tumblr {
+.tumblr, .tweet {
 	background: none;
 	border: none
 }
-.tumblr a {
+.tumblr a, .tweet a {
 	color: #000;
 }
 

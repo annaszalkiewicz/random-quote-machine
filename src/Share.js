@@ -20,7 +20,7 @@ class Share extends Component {
 				</button>
 				<button className="tweet" id="tweet-quote">
 					<a href={`https://twitter.com/intent/tweet?text=${quote}%20by%20${author}&hashtags=quote`}>
-						<FontAwesomeIcon icon={faTwitterSquare} className="twitter" onClick={this.tweet} />
+						<FontAwesomeIcon icon={faTwitterSquare} className="twitter" onClick={this.tweet} size="3x" />
 					</a>
 				</button>
 
