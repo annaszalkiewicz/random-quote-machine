@@ -54,7 +54,7 @@ class Main extends Component {
 
 		return (
 			<main className="main">
-				<div className="container" id="quote-box">
+				<div className="container" id="quote-box" style={{color: randomColor}}>
 					<div className="quote-container">
 						<FontAwesomeIcon icon={faQuoteLeft} className="quote-left" />
 						<span className="quote" id="text">{quote}</span>
