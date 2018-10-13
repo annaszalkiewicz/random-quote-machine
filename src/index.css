@@ -17,7 +17,12 @@ html, body, #root, .App {
 	font-weight: 700;
 	font-size: 1em;
 	text-align: center;
-	border-bottom: solid 1px #000;
+	background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0));
+	padding: 1em 0 2em 0;
+	color: #fff;
+}
+h1 {
+	margin: 0;
 }
 
 /* MAIN */
@@ -31,8 +36,10 @@ html, body, #root, .App {
 }
 
 .container {
-	box-shadow: 0 0 10px #a1a1a1;
+	box-shadow: 0 0 20px #000;
 	padding: 1em;
+	border-radius: 5px;
+	background: #fff;
 }
 .quote-left {
 	margin-right: 1em;
