@@ -28,7 +28,6 @@ h1 {
 /* MAIN */
 
 .main {
-	width: 95%;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -40,6 +39,8 @@ h1 {
 	padding: 1em;
 	border-radius: 5px;
 	background: #fff;
+	width: 95%;
+	max-width: 600px;
 }
 .quote-left {
 	margin-right: 1em;
