@@ -59,6 +59,9 @@ h1 {
 	align-items: center;
 	margin: 0 1em;
 }
+.tweet {
+	margin-left: 1em;
+}
 .reload-icon {
 	background: #000;
 	color: #fff;
