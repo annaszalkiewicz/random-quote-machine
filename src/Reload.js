@@ -11,7 +11,7 @@ render() {
   const { fetchQuote, updateColor, randomColor } = this.props;
   
   return(
-      <FontAwesomeIcon icon={faRedoAlt} onClick={() => { fetchQuote(); updateColor() }} size="2x" className="reload-icon" style={{background: randomColor}} id="new-quote" role="button" aria-label="Click to get new quote"/>
+      <FontAwesomeIcon icon={faRedoAlt} onClick={() => { fetchQuote(); updateColor() }} onKeyPress={() => { fetchQuote(); updateColor() }} size="2x" className="reload-icon" style={{background: randomColor}} id="new-quote" role="button" aria-label="Click to get new quote" tabIndex="0"/>
   )
 
 }
