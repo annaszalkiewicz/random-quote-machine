@@ -131,3 +131,9 @@ h1 {
 		font-size: 1em;
 	}
 }
+
+@media screen and (min-width: 411px) {
+	.container {
+		padding: 2em;
+	}
+}
