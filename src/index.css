@@ -42,10 +42,10 @@ h1 {
 	background: #fff;
 }
 .quote-left {
-	margin-right: 1em;
+	margin-right: 0.4em;
 }
 .quote-right {
-	margin-left: 1em;
+	margin-left: 0.4em;
 }
 .author {
 	text-align: right;
