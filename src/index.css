@@ -137,3 +137,19 @@ h1 {
 		padding: 2em;
 	}
 }
+
+@media screen and (min-width: 600px) {
+	html, body, #root, .App {
+		font-size: 20px;
+	}
+	.header {
+		font-size: 2em;
+	}
+	.reload-icon {
+		padding: 0.15em;
+		font-size: 3em;
+	}
+	.bottom {
+		margin-top: 2em;
+	}
+}
