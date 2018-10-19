@@ -67,7 +67,7 @@ h1 {
 	animation-name: rotate;
 	animation-duration: 1s;
 }
-.twitter:focus, .tumblr:focus, .share a:focus, .reload-icon:focus {
+.share a:focus, .twitter:focus, .tumblr:focus,  .reload-icon:focus, .reload:focus {
 	animation: rotate 1s;
 	outline: solid 3px orange;
 }
