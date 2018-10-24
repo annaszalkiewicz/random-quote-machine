@@ -195,3 +195,14 @@ h1 {
 		font-size: 16px;
 	}
 }
+@media screen and (min-width: 854px) and (orientation: landscape) {
+	.container {
+		padding: 2em;
+	}
+	.quote-container {
+		font-size: 1em;
+	}
+	.reload-icon {
+		padding: 0.3em;
+	}
+}
