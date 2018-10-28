@@ -1,7 +1,7 @@
 {
   "name": "Your Quote for Today",
   "short_name": "Random Quote",
-  "start_url": "/index.html",
+  "start_url": "/random-quote-machine/index.html",
   "icons": [
     {
       "src": "static/img/logo_48.png",
