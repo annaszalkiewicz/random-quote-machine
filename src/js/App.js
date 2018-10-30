@@ -8,14 +8,17 @@ class App extends Component {
 		
 		this.state = {
 			colors: ['#711717', '#155f60', '#6c943e', '#1e7f3f'],
-			randomColor: ''
+			randomColor: '',
+			images: [],
 		}
 		this.updateColor = this.updateColor.bind(this);
+		this.fetchImages = this.fetchImages.bind(this);
 	}
 
 	componentDidMount = () => {
 
 		this.updateColor();
+		this.fetchImages();
 
 	}
 
@@ -26,6 +29,38 @@ class App extends Component {
 		const color = colors[random];
 
 		this.setState({ randomColor: color });
+
+	}
+
+	fetchImages = () => {
+
+		const key = '060c74d545a11b19611116873f118dba';
+		let tag = 'landscape';
+
+		fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${key}&text=${tag}&tag_mode=all&sort=interestingness-desc&per_page=100&page=1&format=json&nojsoncallback=1`)
+			.then(response => response.json())
+			.then((j) => {
+
+				let pics = j.photos.photo.map((pic) => {
+
+					let url = 'https://farm' + pic.farm + '.staticflickr.com/' + pic.server + '/' + pic.id + '_' + pic.secret + '.jpg';
+					return (
+						<div className="image-container" key={pic.id}>
+							<a href={url} target="_blank" rel="noopener noreferrer" tabIndex="-1">
+								<img key={pic.id} src={url} className="gallery-image" alt={tag} tabIndex="0" aria-label={tag} />
+							</a>
+						</div>
+					)
+				})
+
+				this.setState({ images: pics });
+
+			})
+			.catch((error) => {
+
+				this.setState({ error: true })
+
+			});
 
 	}
 	
