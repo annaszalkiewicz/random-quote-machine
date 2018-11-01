@@ -10,6 +10,7 @@ class App extends Component {
 			colors: ['#711717', '#155f60', '#6c943e', '#1e7f3f'],
 			randomColor: '',
 			images: [],
+			randomImage: ''
 		}
 		this.updateColor = this.updateColor.bind(this);
 		this.fetchImages = this.fetchImages.bind(this);
@@ -37,7 +38,7 @@ class App extends Component {
 		const key = '060c74d545a11b19611116873f118dba';
 		let tag = 'landscape';
 
-		fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${key}&text=${tag}&tag_mode=all&sort=interestingness-desc&per_page=100&page=1&format=json&nojsoncallback=1`)
+		fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${key}&text=${tag}&sort=interestingness-desc&content-type=1&extras=url_o&per_page=50&page=1&format=json&nojsoncallback=1`)
 			.then(response => response.json())
 			.then((j) => {
 
@@ -45,15 +46,12 @@ class App extends Component {
 
 					let url = 'https://farm' + pic.farm + '.staticflickr.com/' + pic.server + '/' + pic.id + '_' + pic.secret + '.jpg';
 					return (
-						<div className="image-container" key={pic.id}>
-							<a href={url} target="_blank" rel="noopener noreferrer" tabIndex="-1">
-								<img key={pic.id} src={url} className="gallery-image" alt={tag} tabIndex="0" aria-label={tag} />
-							</a>
-						</div>
+						url
 					)
 				})
 
 				this.setState({ images: pics });
+				this.setState({ randomImage: this.state.images[Math.floor(Math.random() * this.state.images.length)]})
 
 			})
 			.catch((error) => {
@@ -66,10 +64,10 @@ class App extends Component {
 	
 	render() {
 
-		const { randomColor } = this.state;
+		const { randomImage, randomColor } = this.state;
 
 		return (
-			<div className="App" style={{background: randomColor, transition: "all 2s ease"}}>
+			<div className="App" style={{backgroundImage: `url(${randomImage})`, backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center", transition: "all 2s ease"}}>
 				<header className="header">
 					<h1 className="heading-one">Your quote for today</h1>
 				</header>
