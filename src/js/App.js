@@ -63,6 +63,7 @@ class App extends Component {
 				<Main 
 					updateColor={this.updateColor}
 					randomColor={randomColor}
+					fetchImages={this.fetchImages}
 				/>
 				<footer className="footer">
 					<p className="copyright">Written and coded by <a href="https://mywebgraphicdesign.com" target="_blank" rel="noopener noreferrer">Anna Szalkiewicz</a>.</p>

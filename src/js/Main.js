@@ -49,7 +49,7 @@ class Main extends Component {
 	render() {
 
 		const {quote, author} = this.state;
-		const { updateColor, randomColor } = this.props;
+		const { updateColor, randomColor, fetchImages } = this.props;
 		
 
 		return (
@@ -72,6 +72,7 @@ class Main extends Component {
 							fetchQuote = {this.fetchQuote}
 							updateColor = {updateColor}
 							randomColor = {randomColor}
+							fetchImages = {fetchImages}
 						/>
 					</div>
 				</div>
