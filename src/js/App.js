@@ -10,7 +10,7 @@ class App extends Component {
 			colors: ['#711717', '#155f60', '#6c943e', '#1e7f3f'],
 			randomColor: '',
 			images: [],
-			randomImage: ''
+			randomImage: '',
 		}
 		this.updateColor = this.updateColor.bind(this);
 		this.fetchImages = this.fetchImages.bind(this);
@@ -35,30 +35,19 @@ class App extends Component {
 
 	fetchImages = () => {
 
-		const key = '060c74d545a11b19611116873f118dba';
-		let tag = 'landscape';
+		let tag = 'nature';
 
-		fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${key}&text=${tag}&sort=interestingness-desc&content-type=1&extras=url_o&per_page=50&page=1&format=json&nojsoncallback=1`)
-			.then(response => response.json())
-			.then((j) => {
+			fetch(`https://api.unsplash.com/photos/random?query=${tag}&orientation=landscape`, {
+        headers: {
+            Authorization: 'Client-ID 0cf967e9a4b6704211470385b4e1678bef77ab4f36e25d48dc43708eb6715be8'
+        }
+    }).then(response => response.json())
+        .then( (data) => {
+					
+					this.setState({ randomImage: data.urls.full })
 
-				let pics = j.photos.photo.map((pic) => {
-
-					let url = 'https://farm' + pic.farm + '.staticflickr.com/' + pic.server + '/' + pic.id + '_' + pic.secret + '.jpg';
-					return (
-						url
-					)
 				})
-
-				this.setState({ images: pics });
-				this.setState({ randomImage: this.state.images[Math.floor(Math.random() * this.state.images.length)]})
-
-			})
-			.catch((error) => {
-
-				this.setState({ error: true })
-
-			});
+        .catch( (e) => console.log(e));
 
 	}
 	
