@@ -39,7 +39,19 @@ h1 {
 	box-shadow: 0 0 20px #000;
 	padding: 1em;
 	border-radius: 5px;
-	background: #fff;
+	background-color: rgba(0,0,0,0.8);
+	color: #fff;
+	animation-name: container;
+	animation-duration: 3s;
+	animation-timing-function: ease-in;
+}
+@keyframes container {
+	0% {
+		transform: translateX(3000px);
+	}
+	100% {
+		transform: translateX(0);
+	}
 }
 .quote-left {
 	margin-right: 0.4em;
@@ -59,6 +71,10 @@ h1 {
 	align-items: center;
 	margin: 0 1em;
 }
+.tumblr, .twitter {
+	color: #fff;
+	background: none;
+}
 .tweet {
 	margin-left: 1em;
 }
@@ -76,14 +92,14 @@ h1 {
 		transform: rotate(0deg);
 	}
 	25% {
-		transform: rotate(10deg);
+		transform: rotate(15deg);
 	}
 
 	50% {
-		transform: rotate(-10deg);
+		transform: rotate(-15deg);
 	}
 	75% {
-		transform: rotate(10deg);
+		transform: rotate(15deg);
 	}
 	100% {
 		transform: rotate(0deg);
@@ -94,10 +110,7 @@ h1 {
 	background: none;
 }
 .reload-icon {
-	background: #000;
 	color: #fff;
-	padding: 0.3em;
-	border-radius: 4px;
 }
 
 /* FOOTER */
@@ -145,10 +158,6 @@ h1 {
 	.header {
 		font-size: 2em;
 	}
-	.reload-icon {
-		padding: 0.15em;
-		font-size: 3em;
-	}
 	.bottom {
 		margin-top: 2em;
 	}
@@ -186,9 +195,6 @@ h1 {
 	html, body, #root, .App {
 		font-size: 14px;
 	}
-	.reload-icon {
-		font-size: 2em;
-	}
 }
 @media screen and (min-width: 732px) and (orientation: landscape) {
 	html, body, #root, .App {
@@ -202,9 +208,6 @@ h1 {
 	.quote-container {
 		font-size: 1em;
 	}
-	.reload-icon {
-		padding: 0.3em;
-	}
 }
 @media screen and (min-width: 960px) and (orientation: landscape) {
 	html, body, #root, .App {
@@ -213,15 +216,9 @@ h1 {
 	.header {
 		font-size: 2em;
 	}
-	.reload-icon {
-		padding: 0.4em;
-	}
 }
 @media screen and (min-width: 1280px) and (orientation: landscape) {
 	html, body, #root, .App {
 		font-size: 20px;
-	}
-	.reload-icon {
-		padding: 0.5em;
 	}
 }

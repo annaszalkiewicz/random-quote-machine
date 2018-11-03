@@ -8,11 +8,11 @@ class Reload extends Component {
 
 render() {
 
-  const { fetchQuote, randomColor, updateColor, fetchImages } = this.props;
+  const { fetchQuote, fetchImages } = this.props;
   
   return(
-    <button className="reload" aria-label="Click to get new quote" onClick={() => { fetchQuote(); fetchImages(); updateColor() }} onKeyPress={() => { fetchQuote(); fetchImages(); updateColor() }}>
-      <FontAwesomeIcon icon={faRedoAlt}  size="2x" className="reload-icon" style={{background: randomColor}} id="new-quote" />
+    <button className="reload" aria-label="Click to get new quote" onClick={() => { fetchQuote(); fetchImages() }} onKeyPress={() => { fetchQuote(); fetchImages() }}>
+      <FontAwesomeIcon icon={faRedoAlt}  size="3x" className="reload-icon" id="new-quote" />
     </button>   
   )
 
