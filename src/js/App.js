@@ -56,7 +56,7 @@ class App extends Component {
 		const { randomImage, randomColor } = this.state;
 
 		return (
-			<div className="App" style={{backgroundImage: `url(${randomImage})`, backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center", backgroundColor: randomColor, transition: "all 2s ease"}}>
+			<div className="App" style={{backgroundImage: `url(${randomImage})`, backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center", backgroundColor: randomColor, }}>
 				<header className="header">
 					<h1 className="heading-one">Your quote for today</h1>
 				</header>

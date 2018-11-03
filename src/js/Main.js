@@ -14,25 +14,13 @@ class Main extends Component {
 			author: "",
 		}
 		this.fetchQuote = this.fetchQuote.bind(this);
-		// this.changeColor = this.changeColor.bind(this);
 	}
 
 	componentDidMount = () => {
 
 		this.fetchQuote();
-		// this.changeColor();
 
 	}
-
-	// changeColor = () => {
-
-	// 	const colors = ['#9e2021', '#155F60', '#6C943E', '#1E7F3F'];
-	// 	const randomColor = Math.floor(Math.random * colors.length);
-	// 	const body = document.getElementsByTagName('body');
-
-	// 		body.background(randomColor)
-
-	// }
 
 	fetchQuote = () => {
 
@@ -49,9 +37,8 @@ class Main extends Component {
 	render() {
 
 		const {quote, author} = this.state;
-		const { updateColor, randomColor, fetchImages } = this.props;
+		const { randomColor } = this.props;
 		
-
 		return (
 			<main className="main">
 				<div className="container" id="quote-box">
@@ -68,12 +55,7 @@ class Main extends Component {
 							author={author} 
 							randomColor={randomColor}
 						/>
-						<Reload
-							fetchQuote = {this.fetchQuote}
-							updateColor = {updateColor}
-							randomColor = {randomColor}
-							fetchImages = {fetchImages}
-						/>
+						<Reload	/>
 					</div>
 				</div>
 			</main>
