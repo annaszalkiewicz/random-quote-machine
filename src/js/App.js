@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Main from './Main';
+import Referral from './Referral';
 
 class App extends Component {
 
@@ -11,6 +12,8 @@ class App extends Component {
 			randomColor: '',
 			images: [],
 			randomImage: '',
+			author: '',
+			link: ''
 		}
 		this.updateColor = this.updateColor.bind(this);
 		this.fetchImages = this.fetchImages.bind(this);
@@ -43,9 +46,9 @@ class App extends Component {
         }
     }).then(response => response.json())
         .then( (data) => {
-					
-					this.setState({ randomImage: data.urls.full })
-
+					this.setState({ randomImage: data.urls.raw })
+					this.setState({ author: data.user.name })
+					this.setState({ link: data.user.links.html })
 				})
         .catch( (e) => console.log(e));
 
@@ -53,7 +56,7 @@ class App extends Component {
 	
 	render() {
 
-		const { randomImage, randomColor } = this.state;
+		const { randomImage, randomColor, author, link } = this.state;
 
 		return (
 			<div className="App" style={{backgroundImage: `url(${randomImage})`, backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center", backgroundColor: randomColor, }}>
@@ -67,6 +70,10 @@ class App extends Component {
 				/>
 				<footer className="footer">
 					<p className="copyright">Written and coded by <a href="https://mywebgraphicdesign.com" target="_blank" rel="noopener noreferrer">Anna Szalkiewicz</a>.</p>
+					<Referral 
+					author={author}
+					link={link}
+					/>
 				</footer>
 			</div>
 		);
