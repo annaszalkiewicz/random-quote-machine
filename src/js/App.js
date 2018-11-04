@@ -13,7 +13,8 @@ class App extends Component {
 			images: [],
 			randomImage: '',
 			author: '',
-			link: ''
+			link: '',
+			error: false
 		}
 		this.updateColor = this.updateColor.bind(this);
 		this.fetchImages = this.fetchImages.bind(this);
@@ -50,13 +51,15 @@ class App extends Component {
 					this.setState({ author: data.user.name })
 					this.setState({ link: data.user.links.html })
 				})
-        .catch( (e) => console.log(e));
+        .catch( () => {
+					this.setState({ error: true })
+				});
 
 	}
 	
 	render() {
 
-		const { randomImage, randomColor, author, link } = this.state;
+		const { randomImage, randomColor, author, link, error } = this.state;
 
 		return (
 			<div className="App" style={{backgroundImage: `url(${randomImage})`, backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center", backgroundColor: randomColor, }}>
@@ -67,6 +70,7 @@ class App extends Component {
 					updateColor={this.updateColor}
 					randomColor={randomColor}
 					fetchImages={this.fetchImages}
+					error={error}
 				/>
 				<footer className="footer">
 					<p className="copyright">Written and coded by <a href="https://mywebgraphicdesign.com" target="_blank" rel="noopener noreferrer">Anna Szalkiewicz</a>.</p>

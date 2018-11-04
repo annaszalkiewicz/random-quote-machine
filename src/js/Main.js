@@ -25,39 +25,49 @@ class Main extends Component {
 	fetchQuote = () => {
 
 		fetch('https://talaikis.com/api/quotes/random/')
-		.then(response => response.json())
-		.then((data) => {
-			this.setState({ quote: data.quote, author: data.author });
-		})
-		.catch(e => console.log('Error')
-		);
+			.then(response => response.json())
+			.then((data) => {
+				this.setState({ quote: data.quote, author: data.author });
+			})
+			.catch(e => console.log('Error')
+			);
 
 	}
 
 	render() {
 
-		const {quote, author} = this.state;
-		const { randomColor } = this.props;
-		
+		const { quote, author } = this.state;
+		const { randomColor, error } = this.props;
+
 		return (
+
 			<main className="main">
-				<div className="container" id="quote-box">
-					<div className="quote-container">
-						<FontAwesomeIcon icon={faQuoteLeft} className="quote-left" />
-						<span className="quote" id="text" aria-label={quote} tabIndex="0">{quote}</span>
-						<FontAwesomeIcon icon={faQuoteRight} className="quote-right" />
+
+				{error &&
+					<div className="error">Sorry, there was a problem with getting new quote. Please, try again later.</div>
+				}
+
+				{navigator.onLine &&
+					<div className="container" id="quote-box">
+						<div className="quote-container">
+							<FontAwesomeIcon icon={faQuoteLeft} className="quote-left" />
+							<span className="quote" id="text" aria-label={quote} tabIndex="0">{quote}</span>
+							<FontAwesomeIcon icon={faQuoteRight} className="quote-right" />
+						</div>
+
+						<p className="author" id="author">{author}</p>
+						<div className="bottom">
+							<Share
+								quote={quote}
+								author={author}
+								randomColor={randomColor}
+							/>
+							<Reload />
+						</div>
 					</div>
-					
-					<p className="author" id="author">{author}</p>
-					<div className="bottom">
-						<Share 
-							quote={quote} 
-							author={author} 
-							randomColor={randomColor}
-						/>
-						<Reload	/>
-					</div>
-				</div>
+				}
+
+
 			</main>
 		)
 	}
