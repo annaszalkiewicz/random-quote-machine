@@ -62,6 +62,11 @@ Like many of serve’s internal settings, the port can be adjusted using the `-p
 * [FontAwesome](https://fontawesome.com/)
 * [Normalize.css](https://necolas.github.io/normalize.css/)
 * [Random Quotes API by Tadas Talaikis](https://talaikis.com/random_quotes_api/)
+* [Unsplash API](https://unsplash.com/developers)
+
+## Known Issues
+
+1. **Fetching random quote doesn't work:** Random Quotes API by Tadas Talaikis has been removed by its author, so need to find new APi to fix it.
 
 ## Contributions
 
